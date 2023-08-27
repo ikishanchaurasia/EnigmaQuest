@@ -1,0 +1,279 @@
+/* Set the height of the HTML element to 100% */
+html {
+  height: 100%;
+}
+
+/* Style the body element */
+body {
+  height: 100%;
+  background-image: linear-gradient(#4bbee8, #c1b2b2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Game Container */
+.game {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  background-color: #3d2323;
+  border-radius: 5px;
+}
+
+/* Grid 1 Styles */
+#grid1 {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  border: 1px solid #000000;
+}
+
+/* Button Styles within Grid 1 */
+#grid1 button {
+  background-color: #cfcfcf;
+  color: #003333;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #000000;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Hover effect for Buttons in Grid 1 */
+#grid1 button:hover {
+  background-color: rgb(223, 199, 118);
+}
+
+/* Grid 2 Styles */
+#grid2 {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px 80px;
+  border: 1px solid #000000;
+}
+
+/* Button Styles within Grid 2 */
+#grid2 button {
+  background-color: #cfcfcf;
+  color: #003333;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #000000;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Hover effect for Buttons in Grid 2 */
+#grid2 button:hover {
+  background-color: rgb(223, 199, 118);
+}
+
+/* Grid 3 Styles */
+#grid3 {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px 80px 80px;
+  border: 1px solid #000000;
+}
+
+/* Button Styles within Grid 3 */
+#grid3 button {
+  background-color: #cfcfcf;
+  color: #003333;
+  font-size: 24px;
+  font-weight: bold;
+  border: 1px solid #000000;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Hover effect for Buttons in Grid 3 */
+#grid3 button:hover {
+  background-color: rgb(223, 199, 118);
+}
+
+/* Button Styles within Footer */
+.footer {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Button Styles within Footer */
+.footer button {
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  width: 80px;
+  background-color: #ffffff;
+  color: #003333;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Hover effect for Buttons in Footer */
+.footer button:hover {
+  color: #ffffff;
+  background-color: rgb(223, 199, 118);
+}
+
+/* Span Styles within Footer */
+.footer span {
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+/* Hide certain elements with specific IDs */
+#grid1.hidden,
+#grid2.hidden,
+#grid3.hidden,
+#grid.hidden,
+#messages.hidden {
+  display: none;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small screens (up to 600px) */
+@media (max-width: 600px) {
+  /* Update styles for elements to fit small screens */
+  
+  #grid1 {
+    grid-template-columns: 115px 115px 115px;
+    grid-template-rows: 115px 115px 115px;
+  }
+
+  #grid1 button {
+    font-size: 30px;
+  }
+
+  #grid2 {
+    grid-template-columns: 86px 86px 86px 86px;
+    grid-template-rows: 86px 86px 86px 86px;
+  }
+
+  #grid2 button {
+    font-size: 30px;
+  }
+
+  #grid3 {
+    grid-template-columns: 69px 69px 69px 69px 69px;
+    grid-template-rows: 69px 69px 69px 69px 69px;
+  }
+
+  #grid3 button {
+    font-size: 30px;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+
+  .footer button {
+    font-size: 25px;
+    padding: 5px;
+    width: 85px;
+  }
+
+  .footer span {
+    font-size: 23px;
+  }
+}
+
+/* Medium screens (601px to 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  /* Update styles for elements to fit medium screens */
+  
+  #grid1 {
+    grid-template-columns: 123px 123px 123px;
+    grid-template-rows: 123px 123px 123px;
+  }
+
+  #grid1 button {
+    font-size: 30px;
+  }
+
+  #grid2 {
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+  }
+
+  #grid2 button {
+    font-size: 30px;
+  }
+
+  #grid3 {
+    grid-template-columns: 80px 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px 80px;
+  }
+
+  #grid3 button {
+    font-size: 30px;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+
+  .footer button {
+    font-size: 24px;
+    padding: 9px;
+    width: 85px;
+  }
+
+  .footer span {
+    font-size: 25px;
+  }
+}
+
+/* Large screens (993px and above) */
+@media (min-width: 993px) {
+  #grid1 {
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+  }
+
+  #grid1 button {
+    font-size: 30px;
+  }
+
+  #grid2 {
+    grid-template-columns: 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px;
+  }
+
+  #grid2 button {
+    font-size: 30px;
+  }
+
+  #grid3 {
+    grid-template-columns: 75px 75px 75px 75px 75px;
+    grid-template-rows: 75px 75px 75px 75px 75px;
+  }
+
+  #grid3 button {
+    font-size: 30px
+  }
+
+  .footer {
+    margin-top: 18px;
+  }
+
+  .footer button {
+    font-size: 25px;
+    padding: 9px;
+    width: 85px;
+  }
+
+  .footer span {
+    font-size: 20px;
+  }
+}
