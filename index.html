@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Color Display</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnigmaQuest</title>
     <link rel="stylesheet" type="text/css" href="puzzle.css" />
   </head>
   <body>
+    <div class="header">
+      <!-- Play Button -->
+      <div id="hideheader" class="play-button hidden">
+        <button id="playbutton">Play</button>
+      </div>
+
+      <!-- Messages Container -->
+      <div id="messages" class="hidden">
+        <div>
+          <h1 class="message">You win!</h1>
+        </div>
+        <div id="score" class="hidden">Score:</div>
+      </div>
+    </div>
     <!-- Game Container -->
     <div class="game">
       <!-- Grid 1 -->
@@ -72,16 +86,10 @@
 
       <!-- Footer Container -->
       <div id="grid" class="footer hidden">
-        <button>Play</button>
+        <!-- <button>Play</button> -->
         <span id="move">Move: 100</span>
         <span id="time">Time left: 100</span>
       </div>
-    </div>
-
-    <!-- Messages Container -->
-    <div id="messages" class="hidden">
-      <h1 class="message">You win!</h1>
-      <div id="score">Score:</div>
     </div>
     <script src="puzzle.js"></script>
   </body>

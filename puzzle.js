@@ -3,8 +3,9 @@ var randomNumber = Math.floor(Math.random() * 3);
 
 //initializes the grids and elements based on random number generated.
 window.onload = function () {
+  var hideheader = document.getElementById("hideheader");
   var grid = document.getElementById("grid");
-  var kishan = document.getElementById("messages");
+  var messages = document.getElementById("messages");
   var grid1 = document.getElementById("grid1");
   var grid2 = document.getElementById("grid2");
   var grid3 = document.getElementById("grid3");
@@ -12,6 +13,10 @@ window.onload = function () {
   grid.style.display =
     randomNumber === 0 || randomNumber === 1 || randomNumber === 2
       ? "flex"
+      : "none";
+  hideheader.style.display =
+    randomNumber === 0 || randomNumber === 1 || randomNumber === 2
+      ? "block"
       : "none";
   messages.style.display =
     randomNumber === 0 || randomNumber === 1 || randomNumber === 2
@@ -21,6 +26,13 @@ window.onload = function () {
   grid2.style.display = randomNumber === 1 ? "grid" : "none";
   grid3.style.display = randomNumber === 2 ? "grid" : "none";
   console.log(randomNumber);
+
+  const playButton = document.getElementById("playbutton");
+  playButton.addEventListener("click", () => {
+    clearInterval(GAME.tickId);
+    GAME.tickId = setInterval(GAME.tick, 1000);
+    GAME.setState(State.start());
+  });
 };
 
 class Box {
@@ -259,11 +271,11 @@ class State {
   static start() {
     let initialTime;
     if (randomNumber === 0) {
-      initialTime = 5 * 60000;
+      initialTime = 3 * 60000;
     } else if (randomNumber === 1) {
-      initialTime = 10 * 60000;
+      initialTime = 7 * 60000;
     } else {
-      initialTime = 20 * 60000;
+      initialTime = 10 * 60000;
     }
     console.log(initialTime);
     return new State(getRandomGrid(), 0, initialTime, "playing", initialTime);
@@ -318,7 +330,6 @@ class Game {
       clearInterval(this.tickId);
       // Calculate and display the score when the time is up
       const score = this.calculateScore(this.state.grid);
-      // document.getElementById("score").textContent = `Score: ${score.toFixed(2)}`;
       this.setState({ status: "timeout" }); // Set the status to timeout
     }
   }
@@ -410,7 +421,7 @@ class Game {
       this.tickId = setInterval(this.tick, 1000);
       this.setState(State.start());
     });
-    document.querySelector(".footer button").replaceWith(newButton);
+    document.querySelector(".play-button button").replaceWith(newButton);
 
     // Render move
     document.getElementById("move").textContent = `Move: ${move}`;
@@ -436,7 +447,7 @@ class Game {
         2
       )}`;
     } else if (status === "timeout") {
-      document.querySelector(".message").textContent = "Sorry your Time is up";
+      document.querySelector(".message").textContent = "Sorry!";
       document.getElementById("score").textContent = `Score: ${score.toFixed(
         2
       )}`;
